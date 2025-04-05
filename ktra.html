@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0 20px;
+            padding: 0;
+            font-size: 16px;
+        }
+        .nav{
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows:60px;
+        }
+        .menu{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            
+        }
+        .menu a{
+            text-decoration: none;
+            color: black;
+        }
+        .menu-item{
+            position: relative;
+        }
+        .sub-menu{
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+              box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            flex-direction: column;
+             min-width: 150px;
+            z-index: 1000;
+            
+        }
+        .sub-menu a{
+            padding: 20px;
+            width: 100%;
+        }
+
+        .menu-item:hover .sub-menu{
+            display: flex;
+        }
+        .logo img{
+            margin-top: 5px;
+            width: 100%;
+            height: 100%;    
+            object-fit: contain;
+            display: flex;
+            align-items: center;
+        }
+        .tk{
+           display: flex;
+           align-items: center;
+        }
+        .tk input{
+             padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px
+        }
+        .catelog img{
+            width: 100%;
+        }
+        .gt h1{
+            text-align: center;
+        }
+        .khungsp{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-bottom: 40px;
+        }
+        .sp{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .sp img{
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+           
+            
+        }
+        .chan{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+        .chan p{
+            color: red;
+            font-weight: bold;
+        }
+        .footer{
+            margin-top: 10px;
+            width: 100%;
+         
+            height: auto;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px  solid rgb(175, 175, 175);
+        }
+        .footer p{
+            font-style: italic;
+            color: rgb(48, 48, 47);
+
+        }
+        .catelog img{
+            width: 100%; /* Giữ nguyên chiều rộng 100% */
+            border-top-left-radius:150px;
+            border-bottom-right-radius: 150px;
+        }
+        .hamburget {
+            display: none;
+            cursor: pointer; /* Thêm hiệu ứng trỏ chuột */
+        }
+        #check {
+            display: none;
+        }
+
+        @media (max-width: 600px){
+            .khungsp{
+            display: grid;
+            grid-template-columns:  1fr;
+            margin-bottom: 40px;
+
+             }
+            body{
+                font-size: 12px;
+            }
+            .nav{
+                display: flex;
+                justify-content: space-around;
+            }
+            .tk{display: none;}
+            
+
+            #check:checked ~ .menu {
+                display: flex;
+            }
+            
+             .logo{
+                order:1;
+                width: 100%;
+                text-align: center;
+             }
+             .hamburget{
+            display: block;
+            order:2;
+             }
+             .menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                order: 3;
+            }
+             .menu-item:hover .sub-menu{
+                display: none;
+             }
+             .menu-item > a::after {
+                content: " ▼";
+                font-size: 10px;
+                  }
+                .catelog{
+            display: none;
+        }
+    }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <input type="checkbox" id="check">
+             <label for="check" class="hamburget">&#9776;</label> 
+            <div class="menu">
+                
+                <div class="menu-item">
+                     <a href="#">NỮ</a>
+                    <div class="sub-menu">
+                        <a href="#">Đầm</a>
+                        <a href="#">Chân váy</a>
+                        <a href="#">Phụ Kiện</a>
+                    </div>
+                </div>
+                <div class="menu-item">
+                <a href="#">NAM</a>
+                <div class="sub-menu">
+                    <a href="#">Áo thun</a>
+                    <a href="#">Áo sơ mi</a>
+                    <a href="#">Áo len</a>
+                </div>
+                </div>
+                <a href="#" class="highlight">SIÊU DEAL T4 - SALE UPTO 70%</a>
+                <a href="#">BỘ SƯU TẬP</a>
+                <a href="#">VỀ CHÚNG TÔI</a>
+            </div>
+            <div class="logo">
+                <img src="https://incucdep.com/wp-content/uploads/2014/12/logo-thoi-trang.jpg" alt=""></div>
+            <div class="tk">
+                <input type="text" placeholder="tìm kiếm" size="30">
+                <button style="font-size: 18px;"><i class="fa fa-search"></i></button>
+            </div>
+            
+        </div>
+        
+        <div class="catelog">
+            <img src="https://cotton4u.vn/files/news/2025/03/28/823c95a27631ad433f4c3d82676c78c0.webp">
+        </div>
+        <div class="gt">
+            <h1>NEW ARRIVAL</h1>
+        </div>
+        <div class="khungsp">
+            <div class="sp">
+                <img src="https://cotton4u.vn/files/product/thumab/400/2025/03/28/b8fde9bffa507a74358e8e4a4d015c2a.webp">
+                <p>Moonlit Lace - Áo sơ mi hoa lụa</p>
+                <div class="chan">
+                    <p>1.890.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+            <div class="sp">
+                <img src="https://pubcdn.ivymoda.com/files/product/thumab/400/2025/03/28/11c44364c0f4d78516c36d6c0977bd4f.webp">
+                <p>Obsidian Curve- Chân váy bút chì</p>
+                <div class="chan">
+                    <p>1.490.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+            <div class="sp">
+                <img src="https://cotton4u.vn/files/product/thumab/400/2025/03/28/c68a2176e749335f7d9daf0c6e4231ea.webp">
+                <p>Mystic Veil Blouse - Áo ren cổ đức</p>
+                <div class="chan">
+                    <p>2.190.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+            <div class="sp">
+                <img src="https://cotton4u.vn/files/product/thumab/400/2025/03/28/cf370ae27f7923a5fa2a269aa18f45a1.webp">
+                <p>Golden Glimmer Dress - Đầm ren xòe</p>
+                <div class="chan">
+                    <p>990.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+         </div>
+
+         <div class="gt">
+            <h1>GIẢM 50% CÁC SẢN PHẨM</h1>
+        </div>
+        <div class="khungsp">
+            <div class="sp">
+                <img src="https://cotton4u.vn/files/product/thumab/400/2025/03/28/c28afd3d7ebad6a4c87ed812bc2d3381.webp">
+                <p>Celestial Ballet Dress - Đầm lụa ren hoa</p>
+                <div class="chan">
+                    <p>1.490.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+            <div class="sp">
+                <img src="https://cotton4u.vn/files/product/thumab/400/2024/04/12/99db170ee5913b9a61e7529f3a66d8ac.webp">
+                <p>Bliss Dress - Đầm xòe dạo phố</p>
+                <div class="chan">
+                    <p>845.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+            <div class="sp">
+                <img src="https://cotton4u.vn/files/product/thumab/400/2025/01/08/c06ea50d84599888482b1640347f0035.webp">
+                <p>Áo vest Sophia Elegance</p>
+                <div class="chan">
+                    <p>754.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+            <div class="sp">
+                <img src="https://cotton4u.vn/files/product/thumab/400/2024/03/22/48eea9da8bce89591c8a880bda989983.webp">
+                <p>Áo khoác blazer cổ V Alice</p>
+                <div class="chan">
+                    <p>1.095.000</p>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+
+         </div>
+
+         <div class="catelog">
+            <img src="https://cotton4u.vn/files/news/2025/04/01/2268816b01669685d3e5352ad7fd2f8f.webp">
+        </div>
+        
+        <div class="footer">
+            <p>Họ tên sinh viên: </p>
+            <p>Lớp: </p>
+            <p> Khoa: </p>
+        </div>
+
+    </div>
+</body>
+</html>

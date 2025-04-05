@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            display: grid;
+            grid-template-areas: "menu logo timkiem";
+            grid-template-columns: 3fr 1fr 1fr;
+        }
+        .hamburget{display: none; cursor: pointer;}
+        .menu{
+            
+            display: flex;
+            justify-content: space-around;
+        }
+        .timkiem{
+            display: grid;
+            grid-area:timkiem;
+        }
+        .logo{
+            display: grid;
+            grid-area:logo;
+        }
+        #check{display: none;}
+        @media(max-width:600px){
+            .menu{
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+               
+                position: absolute;
+                top:60px;
+                background-color: white; 
+                z-index: 100;
+            }
+            .timkiem{
+                display: none;
+            }
+            .nav{
+                display: grid;
+                grid-template-areas: "hamburget logo";
+                grid-template-columns:  1fr 1fr;
+                margin-bottom: 20px;
+               
+            }
+            .menu {display: none;}
+            #check:checked ~ .menu {
+                display: flex;
+            }
+            .hamburget{
+                display: grid;
+                grid-area:hamburget;
+                display: block;
+                font-size: 30px;
+                cursor: pointer;
+                margin-left: 20px;
+                
+            }
+            .logo{
+                display: grid;
+                grid-area:logo;
+            }
+        }
+        @media (min-width:610px){
+            .hamburget{
+                display: none;
+            }
+            .timkiem{
+                display: block;
+            }
+            .nav {
+                grid-template-columns: 3fr 1fr 1fr; /* 3 cột: menu, logo, tìm kiếm */
+            }
+            .menu{
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <input type="checkbox" id="check">
+        <label for="check" class="hamburget">&#9776;</label> 
+        <div class="menu">
+            
+            <a href="#">Nam</a>
+            <a href="#">Nam</a>
+            <a href="#">Nam</a>
+            <a href="#">Nam</a>
+        </div>
+        <div class="logo">logo</div>
+        <div class="timkiem">tk</div>
+    </nav>
+</body>
+</html>
